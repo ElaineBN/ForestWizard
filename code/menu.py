@@ -5,7 +5,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH, MENU_OPTION, C_WHITE, C_BLUE, C_BLACK, C_GREEN
+from code.Const import WIN_WIDTH, MENU_OPTION, C_WHITE, C_BLUE, C_BLACK
 
 
 class Menu:
@@ -20,7 +20,6 @@ class Menu:
         self.player2_surf = pygame.image.load('./asset/Player2Menu.png').convert_alpha()
         self.player2_rect = self.player2_surf.get_rect(left=450, top=370)
 
-
     def run(self):
         menu_option = 0
         pygame.mixer_music.load('./asset/Menu.wav')
@@ -33,7 +32,6 @@ class Menu:
             self.menu_text(40, "SELECT YOUR PLAYER:", C_BLACK, ((WIN_WIDTH / 2), 300))
             self.window.blit(self.player1_surf, self.player1_rect)
             self.window.blit(self.player2_surf, self.player2_rect)
-
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
